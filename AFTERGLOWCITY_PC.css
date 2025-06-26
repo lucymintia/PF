@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Afterglowcity Showcase</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      overflow-x: hidden;
+      background-color: #fff;
+    }
+
+    .section {
+      position: relative;
+      width: 100%;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .image-stack {
+      position: relative;
+      width: 100%;
+    }
+
+    .image-stack img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      position: relative;
+      z-index: 2;
+    }
+
+    .image-stack .bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .marquee-container {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      z-index: 2;
+      height: 1000px;
+    }
+
+    .marquee-content {
+      display: inline-block;
+      white-space: nowrap;
+      width: calc(1500px * 3);
+      animation: marquee 30s linear infinite;
+    }
+
+    .marquee-content img {
+      position: relative !important;
+      width: auto !important;
+      height: 1100px !important;
+      max-height: none !important;
+      object-fit: contain !important;
+      margin-right: 1px;
+      top: -30px;
+    }
+
+    @keyframes marquee {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ✅ 6단락 - 높이 30% 증가, 배경색 #111111 */
+    .section6 {
+      position: relative;
+      width: 100vw;
+      max-width: 100%;
+      background-color: #111111;
+      overflow: hidden;
+    }
+
+    .section6 .layer-stack {
+      position: relative;
+      width: 100%;
+      max-width: 1920px;
+      margin: 0 auto;
+  height: 1690px; /* ← 1690px → 2028px */
+      mix-blend-mode: normal;
+      isolation: isolate;
+    }
+
+    .layer-stack img.bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      z-index: 1;
+    }
+
+    .layer-stack .cover1,
+    .layer-stack .cover2,
+    .layer-stack .cover3 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .layer-stack.animate-cover1 .cover1 {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+      z-index: 5 !important;
+      transition-delay: 0s !important;
+    }
+
+    .layer-stack.animate-cover2 .cover2 {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+      z-index: 6 !important;
+      transition-delay: 0.3s !important;
+    }
+
+    .layer-stack.animate-cover3 .cover3 {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+      z-index: 7 !important;
+      transition-delay: 0.6s !important;
+    }
+
+    .layer-stack .spacer {
+      visibility: hidden;
+      position: relative;
+      z-index: 0;
+      width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+
+<!-- 1단락 -->
+<div class="section">
+  <div class="image-stack">
+    <img src="https://creashd.cafe24.com/showcase/afterglowcity/afterglowcity_pc_011_bg.png" alt="bg1" class="bg" />
+    <img src="https://creashd.cafe24.com/showcase/afterglowcity/afterglowcity_pc_01_cover.png" alt="cover1" />
+  </div>
+</div>
+
+<!-- 2단락 -->
+<div class="section">
+  <div class="image-stack">
+    <img src="https://creashd.cafe24.com/showcase/afterglowcity/afterglowcity_pc_022_bg.png" alt="bg2" class="bg" />
+    <img src="https://creashd.cafe24.com/showcase/afterglowcity/afterglowcity_pc_02_cover.png" alt="cover2" />
+  </div>
+</div>
+
+<!-- 3단락 -->
+<div class="section">
+  <div class="image-stack">
+    <img src="https://creashd.cafe24.com/showcase/afterglowcity/afterglowcity_pc_03_bg.png" alt="bg3" class="bg" />
+    <div class="marquee-container">
+      <div class="marquee-content">
+        <img src="https://creashd.cafe24.com/showcase/afterglowcity/afterglowcity_pc_03_cover.png" alt="marquee" />
+        <img src="https://creashd.cafe24.com/showcase/afterglowcity/afterglowcity_pc_03_cover.png" alt="marquee" />
+        <img src="https://creashd.cafe24.com/showcase/afterglowcity/afterglowcity_pc_03_cover.png" alt="marquee" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 4단락 -->
+<div class="section">
+  <div class="image-stack">
+    <img src="https://creashd.cafe24.com/showcase/afterglowcity/afterglowcity_pc_04_bg.png" alt="bg4" class="bg" />
+    <img src="https://creashd.cafe24.com/showcase/afterglowcity/afterglowcity_pc_04_bg.png" alt="spacer" class="spacer" />
+  </div>
+</div>
+
+<!-- 5단락 -->
+<div class="section">
+  <div class="image-stack">
+    <img src="https://creashd.cafe24.com/showcase/afterglowcity/afterglowcity_pc_055_bg.png" alt="bg5" class="bg" />
+    <img src="https://creashd.cafe24.com/showcase/afterglowcity/afterglowcity_pc_05_cover.png" alt="cover5" />
+  </div>
+</div>
+
+<!-- ✅ 6단락 (크기 증가 & 배경색 지정) -->
+<div class="section6">
+  <div class="layer-stack" id="layer-stack">
+    <img src="https://creashd.cafe24.com/showcase/afterglowcity/afterglowcity_pc_066_bg.png" alt="bg6" class="bg" />
+    <img src="https://creashd.cafe24.com/showcase/afterglowcity/afterglowcity_pc_06_cover_011.png" alt="cover6-1" class="cover1" />
+    <img src="https://creashd.cafe24.com/showcase/afterglowcity/afterglowcity_pc_06_cover_022.png" alt="cover6-2" class="cover2" />
+    <img src="https://creashd.cafe24.com/showcase/afterglowcity/afterglowcity_pc_06_cover_033.png" alt="cover6-3" class="cover3" />
+  </div>
+</div>
+
+<hr> 
+
+<!-- 7단락 -->
+<div class="section">
+  <div class="image-stack">
+    <img src="https://creashd.cafe24.com/showcase/afterglowcity/afterglowcity_pc_07_left.png" alt="bg7" class="bg" />
+    <img src="https://creashd.cafe24.com/showcase/afterglowcity/afterglowcity_pc_07_right.png" alt="cover7" />
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const layerStack = document.getElementById('layer-stack');
+
+    const animateSequence = () => {
+      layerStack.classList.add('animate-cover1');
+      setTimeout(() => {
+        layerStack.classList.add('animate-cover2');
+      }, 300);
+      setTimeout(() => {
+        layerStack.classList.add('animate-cover3');
+      }, 600);
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateSequence();
+          observer.unobserve(layerStack);
+        }
+      });
+    }, {
+      threshold: 0.5
+    });
+
+    observer.observe(layerStack);
+  });
+</script>
+
+</body>
+</html>
