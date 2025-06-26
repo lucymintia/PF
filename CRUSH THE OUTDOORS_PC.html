@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Sections</title>
+    <style>
+        /* Marquee container style */
+        .marquee-container {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        /* Marquee effect style */
+        .marquee {
+            display: inline-block;
+            white-space: nowrap;
+            animation: scroll 20s linear infinite;
+        }
+
+        /* Animation to scroll the image */
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* Ensure image takes full width */
+        .marquee img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Slider Styles */
+        .section-container.pro {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin: 0;
+        }
+
+        .left-slider.pro, .right-image.pro {
+            flex: 1;
+            margin: 0;
+            position: relative;
+            overflow: hidden;
+            height: auto;
+        }
+
+        .right-image.pro img {
+            width: 100%;
+            height: auto;
+        }
+
+        .slider-wrapper.pro {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            align-items: center;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide.pro {
+            min-width: 100%;
+            box-sizing: border-box;
+            height: 100%;
+        }
+
+        .slide.pro img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .prev-arrow.pro, .next-arrow.pro {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #fff;
+            border: none;
+            background: none;
+            font-size: 3.45rem;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 1;
+        }
+
+        .prev-arrow.pro { left: 0; }
+        .next-arrow.pro { right: 0; }
+
+        /* Prevent white space issue after the last image */
+        .slider-wrapper.pro {
+            will-change: transform;
+        }
+
+        /* Prevent overflow after the last image */
+        .slider-wrapper.pro > .slide.pro:last-child {
+            margin-right: 0;
+        }
+
+        /* Up-slide animation for 4th and 9th sections */
+        .section-upslide {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .section-upslide.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1st Section -->
+    <div class="section">
+        <img src="https://creashd.cafe24.com/showcase/crushthehike_pc_main_011.jpg" alt="Single Image 1">
+    </div>
+
+    <!-- 2nd Section -->
+    <div class="section">
+        <img src="https://creashd.cafe24.com/showcase/crushthehike_pc_022222.jpg" alt="Single Image 2">
+    </div>
+
+    <!-- 3rd Section: Marquee -->
+    <div class="section">
+        <div class="marquee-container">
+            <div class="marquee">
+                <img src="https://creashd.cafe24.com/showcase/crushthehike_pc_033.jpg" alt="Scrolling Image">
+                <img src="https://creashd.cafe24.com/showcase/crushthehike_pc_033.jpg" alt="Scrolling Image">
+            </div>
+        </div>
+    </div>
+
+    <!-- 4th Section -->
+    <div class="section section-upslide">
+        <img src="https://creashd.cafe24.com/showcase/crushthehike_pc_04444.jpg" alt="Single Image 4">
+    </div>
+
+    <!-- 5th Section: Slider + Image -->
+    <div class="section-container pro">
+        <div class="left-slider pro">
+            <button class="prev-arrow pro">&#10094;</button>
+            <div class="slider-wrapper pro">
+                <div class="slide pro"><img src="https://creashd.cafe24.com/showcase/crushthehike_pc_left_01.jpg" alt="Slide 1"></div>
+                <div class="slide pro"><img src="https://creashd.cafe24.com/showcase/crushthehike_pc_left_02.jpg" alt="Slide 2"></div>
+                <div class="slide pro"><img src="https://creashd.cafe24.com/showcase/crushthehike_pc_left_03.jpg" alt="Slide 3"></div>
+                <div class="slide pro"><img src="https://creashd.cafe24.com/showcase/crushthehike_pc_left_04.jpg" alt="Slide 4"></div>
+            </div>
+            <button class="next-arrow pro">&#10095;</button>
+        </div>
+        <div class="right-image pro">
+            <img src="https://creashd.cafe24.com/showcase/crushthehike_pc_right_011111111.jpg" alt="Right Image">
+        </div>
+    </div>
+
+    <!-- 6th Section -->
+    <div class="section">
+       <br> <br> <br><br> <br><br><br><br><br><br> <br>  <img src="https://creashd.cafe24.com/showcase/crushthehike_pc_06.jpg" alt="Single Image 6"><br> <br> <br> 
+    </div>
+
+    <!-- 7th Section -->
+    <div class="section">
+        <img src="https://creashd.cafe24.com/showcase/crushthehike_pc_077.jpg" alt="Single Image 7">
+    </div>
+
+    <!-- 8th Section: Marquee -->
+    <div class="section">
+        <div class="marquee-container">
+            <div class="marquee">
+                <img src="https://creashd.cafe24.com/showcase/crushthehike_pc_088.jpg" alt="Scrolling Image">
+                <img src="https://creashd.cafe24.com/showcase/crushthehike_pc_088.jpg" alt="Scrolling Image"><br><br><br><br>
+            </div>
+        </div>
+    </div>
+
+    <!-- 10th Section: Slider + Image -->
+    <div class="section-container pro">
+        <div class="left-slider pro">
+            <button class="prev-arrow pro">&#10094;</button>
+            <div class="slider-wrapper pro">
+                <div class="slide pro"><img src="https://creashd.cafe24.com/showcase/crushthehike2_pc_left_01.jpg" alt="Slide 1"></div>
+                <div class="slide pro"><img src="https://creashd.cafe24.com/showcase/crushthehike2_pc_left_02.jpg" alt="Slide 2"></div>
+                <div class="slide pro"><img src="https://creashd.cafe24.com/showcase/crushthehike2_pc_left_03.jpg" alt="Slide 3"></div>
+            </div>
+            <button class="next-arrow pro">&#10095;</button>
+        </div>
+        <div class="right-image pro">
+            <img src="https://creashd.cafe24.com/showcase/crushthehike2_pc_right_0111.jpg" alt="Right Image">
+        </div>
+    </div>
+
+
+    <!-- 10nd Section -->
+    <div class="section">
+        <img src="https://creashd.cafe24.com/showcase/crushthehike_pc_1000.jpg" alt="Single Image 5">
+    </div>
+
+
+
+
+    <script>
+        // Common Slider Functionality
+        function setupSlider(sliderWrapper, prevButton, nextButton) {
+            const slides = sliderWrapper.querySelectorAll('.slide.pro');
+            let index = 0;
+
+            function showSlide() {
+                const totalSlides = slides.length;
+                if (index >= totalSlides) index = 0;
+                if (index < 0) index = totalSlides - 1;
+                sliderWrapper.style.transition = 'transform 0.5s ease-in-out';
+                sliderWrapper.style.transform = `translateX(${-index * 100}%)`;
+            }
+
+            prevButton.addEventListener('click', () => {
+                index--;
+                showSlide();
+                resetAutoSlide();
+            });
+
+            nextButton.addEventListener('click', () => {
+                index++;
+                showSlide();
+                resetAutoSlide();
+            });
+
+            // Auto Slide
+            let autoSlideInterval = setInterval(() => {
+                index++;
+                showSlide();
+            }, 2500);
+
+            function resetAutoSlide() {
+                clearInterval(autoSlideInterval);
+                autoSlideInterval = setInterval(() => {
+                    index++;
+                    showSlide();
+                }, 2500);
+            }
+
+            // Initialize first slide
+            showSlide();
+        }
+
+        // Initialize sliders
+        const sliderWrapper1 = document.querySelector('.slider-wrapper.pro');
+        const prevButton1 = document.querySelector('.prev-arrow.pro');
+        const nextButton1 = document.querySelector('.next-arrow.pro');
+        setupSlider(sliderWrapper1, prevButton1, nextButton1);
+
+        const sliderWrapper2 = document.querySelectorAll('.slider-wrapper.pro')[1];
+        const prevButton2 = document.querySelectorAll('.prev-arrow.pro')[1];
+        const nextButton2 = document.querySelectorAll('.next-arrow.pro')[1];
+        setupSlider(sliderWrapper2, prevButton2, nextButton2);
+
+        // Intersection Observer for upslide animation
+        const sections = document.querySelectorAll('.section-upslide');
+        const observerOptions = {
+            threshold: 0.5 // Trigger when 50% of the section is in view
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); // Stop observing once it's visible
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+
+</body>
+</html>
